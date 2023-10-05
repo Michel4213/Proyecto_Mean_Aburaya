@@ -1,0 +1,61 @@
+####
+GET http://localhost:9000/api/products HTTP/1.1
+autorizado: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2OTQ1NzExOTZ9.ELNIyR1qDYhWsS3kTNoB08tR2-zAr-zEKUWNO2_gTmc
+
+
+####
+
+POST http://localhost:9000/api/productsMany HTTP/1.1
+Content-Type: application/json
+
+[
+    {
+        "name":"Pepito",
+        "lastname": "Perez",
+        "age": 78
+    },
+    {
+        "name":"Pepita",
+        "lastname": "Lozano",
+        "age": 78
+    },
+    {
+        "name":"Juan",
+        "lastname": "Aries",
+        "age": 78
+    }
+]
+
+####
+
+POST http://localhost:9000/api/products HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Juan",
+    "lastname": "Mendez",
+    "age": "78",
+    "email": "juan.mz@gmail.com"
+}
+
+####
+GET http://localhost:9000/api/products/"id" HTTP/1.1 
+
+####
+PUT http://localhost:9000/api/products/"id" HTTP/1.1
+Content-Type: application/json
+
+    {
+        "name":"Sofia",
+        "lastname":"Jimenez",
+        "age": 19
+    }
+
+
+
+
+####
+DELETE http://localhost:9000/api/products/"id" HTTP/1.1
+
+####
+PUT http://localhost:9000/api/products/64d6ea5177de8dac4b20e090 HTTP/1.1

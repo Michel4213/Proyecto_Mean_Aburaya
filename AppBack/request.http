@@ -1,0 +1,85 @@
+####
+GET http://localhost:9000/api/users HTTP/1.1
+
+
+####
+
+POST http://localhost:9000/api/usersMany HTTP/1.1
+Content-Type: application/json
+
+[
+    {
+        "name":"Pepito",
+        "lastname": "Perez",
+        "age": 78
+    },
+    {
+        "name":"Pepita",
+        "lastname": "Lozano",
+        "age": 78
+    },
+    {
+        "name":"Juan",
+        "lastname": "Aries",
+        "age": 78
+    }
+]
+
+####
+
+POST http://localhost:9000/api/users HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Juan",
+    "lastname": "Mendez",
+    "age": "78",
+    "email": "juan.mz@gmail.com"
+}
+
+####
+GET http://localhost:9000/api/users/64dedbf2f7bccca0ca056444 HTTP/1.1 
+
+####
+PUT http://localhost:9000/api/users/64d590a828abb0f21d0aeddc HTTP/1.1
+Content-Type: application/json
+
+    {
+        "name":"Sofia",
+        "lastname":"Jimenez",
+        "age": 19
+    }
+
+####
+DELETE http://localhost:9000/api/users/64f7ccf76595ec3b78797615 HTTP/1.1
+
+####
+PUT http://localhost:9000/api/users/64d590a828abb0f21d0aeddc HTTP/1.1
+
+
+
+####
+
+POST http://localhost:9000/api/register HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Carolina",
+    "lastname": "Plazas",
+    "age": "30",
+    "email": "caro1@gmail.com",
+    "password": "12345"
+}
+
+####
+
+POST http://localhost:9000/api/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "caro1@gmail.com",
+    "password": "12345"
+}
+
+####
+GET http://localhost:9000/api/users HTTP/1.1
