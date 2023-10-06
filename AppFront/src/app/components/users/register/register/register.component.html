@@ -1,0 +1,36 @@
+<section class="registrar">
+    <section class="title" id="title1">
+        <h3>Register</h3>
+    </section>
+    <section class="formulario">
+        <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+            <section class="mb-3">
+                <label class="texto1">Name</label>
+                <input type="text" class="form-control" formControlName="name">
+            </section>
+            <section class="mb-3">
+                <label class="texto1">Lastname</label>
+                <input type="text" class="form-control" formControlName="lastname">
+            </section>
+            <section class="mb-3">
+                <label class="texto1">Age</label>
+                <input type="number" class="form-control" formControlName="age">
+            </section>
+            <section class="mb-3">
+                <label class="texto1">Email</label>
+                <input type="email" class="form-control" formControlName="email">
+            </section>
+            <section class="mb-3">
+                <label class="texto1">Password</label>
+                <input type="password" class="form-control" formControlName="password">
+            </section>
+            <input type="submit" value="ENVIAR" class="btn1">
+        </form>
+        <a [routerLink]="['/login']">
+            <p class="linkLogin">¿Ya tienes una cuenta? Click Aquí</p>
+        </a>
+    </section>
+    <section class="imagenregiscont">
+        <img class="imagenregis" src="../../../../../assets/images/regi.png" alt="">
+    </section>
+</section>
