@@ -37,11 +37,28 @@
     <h4 class="productsize">
       Talla
     </h4>
-    <section class="sizebtns" *ngFor="let tallas of product.tallas">
+    <!-- <section class="sizebtns" *ngFor="let tallas of product.tallas">
       <button type="button" class="btnsizes" (click)="addSelectedSize(tallas.tallas, product._id)">
         {{tallas.talla}}
       </button>
-    </section>
+    </section> -->
+  <section class="sizebtns">
+    <button>
+      XS
+    </button>
+    <button>
+      S
+    </button>
+    <button>
+      M
+    </button>
+    <button>
+      L
+    </button>
+    <button>
+      XL
+    </button>
+  </section>
     <h4 class="productPrice">
       {{product.precio}}
     </h4>

@@ -446,8 +446,9 @@ input.btn1:active::before {
 .sizebtns {
   display: flex;
   align-items: center;
-  justify-content: end;
+  justify-content: space-around;
   grid-row: 5/6;
+  grid-column: 4/6;
 }
 
 .btnsizes {
