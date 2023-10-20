@@ -1,12 +1,5 @@
 import mongoose from "mongoose";
 
-const datosSchema = mongoose.Schema(
-    {
-        direccion:{type: String},
-            telefono:{type:String},
-    }
-)
-
 const userSchema = mongoose.Schema(
     {
         name:{
@@ -24,13 +17,6 @@ const userSchema = mongoose.Schema(
         email:{
             type: String,
             require: true,
-        },
-        datosp:[
-            datosSchema
-        ],
-        cargo:{
-            type: String,
-            require: false
         },
         password:{
             type: String,

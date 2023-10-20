@@ -23,118 +23,34 @@
             </section>
         </section>
     </main>
-    <section id="panelescamisas">
-        <section class="camiseta">
-            <a class="linkcamisa" [routerLink]="['/product']">
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <img class="camisa1" src="../../../../assets/images/Camiseta rosa frente.jpg">
-                        </div>
-                        <div class="flip-card-back">
-                            <img class="camisa2" src="../../../../assets/images/Camiseta rosa espalda.jpg">
-                        </div>
-                    </div>
-                </div>
-                <section class="txtcamisa">
-                    <p class="txt1">Camiseta Faisan - Hi no maid ni</p>
-                    <p class="txt2">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <section class="panelescamisas">
+        <ul class="camiLista" *ngFor="let product of arrProducts; let i = index">
+            <li>
+                <section class="camiseta">
+                    <a class="linkcamisa" [routerLink]="['/product']">
+                        <section class="amongus">
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <img class="camisa1" src="{{product.img1}}">
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <img class="camisa2" src="{{product.img2}}">
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="txtcamisa">
+                            <p class="txt1">{{product.tipo}} {{product.diseno}}- Hi no maid ni</p>
+                            <p class="txt2">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </section>
+                    </a>
                 </section>
-            </a>
-        </section>
-        <section class="camiseta">
-            <a class="linkcamisa" [routerLink]="['/product']">
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <img class="camisa1" src="../../../../assets/images/Camiseta rosa frente.jpg">
-                        </div>
-                        <div class="flip-card-back">
-                            <img class="camisa2" src="../../../../assets/images/Camiseta rosa espalda.jpg">
-                        </div>
-                    </div>
-                </div>
-                <section class="txtcamisa">
-                    <p class="txt1">Camiseta Faisan - Hi no maid ni</p>
-                    <p class="txt2">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </section>
-            </a>
-        </section>
-        <section class="camiseta">
-            <a class="linkcamisa" [routerLink]="['/product']">
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <img class="camisa1" src="../../../../assets/images/Camiseta rosa frente.jpg">
-                        </div>
-                        <div class="flip-card-back">
-                            <img class="camisa2" src="../../../../assets/images/Camiseta rosa espalda.jpg">
-                        </div>
-                    </div>
-                </div>
-                <section class="txtcamisa">
-                    <p class="txt1">Camiseta Faisan - Hi no maid ni</p>
-                    <p class="txt2">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </section>
-            </a>
-        </section>
-        <section class="camiseta">
-            <a class="linkcamisa" [routerLink]="['/product']">
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <img class="camisa1" src="../../../../assets/images/Camiseta rosa frente.jpg">
-                        </div>
-                        <div class="flip-card-back">
-                            <img class="camisa2" src="../../../../assets/images/Camiseta rosa espalda.jpg">
-                        </div>
-                    </div>
-                </div>
-                <section class="txtcamisa">
-                    <p class="txt1">Camiseta Faisan - Hi no maid ni</p>
-                    <p class="txt2">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </section>
-            </a>
-        </section>
-        <section class="camiseta">
-            <a class="linkcamisa" [routerLink]="['/product']">
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <img class="camisa1" src="../../../../assets/images/Camiseta rosa frente.jpg">
-                        </div>
-                        <div class="flip-card-back">
-                            <img class="camisa2" src="../../../../assets/images/Camiseta rosa espalda.jpg">
-                        </div>
-                    </div>
-                </div>
-                <section class="txtcamisa">
-                    <p class="txt1">Camiseta Faisan - Hi no maid ni</p>
-                    <p class="txt2">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </section>
-            </a>
-        </section>
-        <section class="camiseta">
-            <a class="linkcamisa" [routerLink]="['/product']">
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <img class="camisa1" src="../../../../assets/images/Camiseta rosa frente.jpg">
-                        </div>
-                        <div class="flip-card-back">
-                            <img class="camisa2" src="../../../../assets/images/Camiseta rosa espalda.jpg">
-                        </div>
-                    </div>
-                </div>
-                <section class="txtcamisa">
-                    <p class="txt1">Camiseta Faisan - Hi no maid ni</p>
-                    <p class="txt2">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </section>
-            </a>
-        </section>
+            </li>
+        </ul>
     </section>
-        <section class="lookbookcontainer">
-            <img class="lookbooklogo" src="../../../../assets/images/LOGO ABURAYA.png">
-            <button id="btnlookbook" class="btn">LookBook</button>
-        </section>
+    <section class="lookbookcontainer">
+        <img class="lookbooklogo" src="../../../../assets/images/LOGO ABURAYA.png">
+        <button id="btnlookbook" class="btn">LookBook</button>
     </section>
+</section>

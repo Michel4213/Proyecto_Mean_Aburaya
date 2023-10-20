@@ -1,13 +1,13 @@
 <main>
-  <section class="contenedorproducto">
+  <section class="contenedorproducto" *ngFor="let product of arrProducts; let i = index">
     <section class="carrusel">
       <div id="carouselExampleDark" class="carousel carousel-dark slide">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="../../../../assets/images/Camiseta rosa frente.jpg" class="d-block w-100" alt="...">
+            <img src="{{product.img1}}" class="d-block w-100" alt="...">
           </div>
           <div class="carousel-item">
-            <img src="../../../../assets/images/Camiseta rosa espalda.jpg" class="d-block w-100" alt="...">
+            <img src="{{product.img2}}" class="d-block w-100" alt="...">
           </div>
           <div class="carousel-item">
             <img src="../../../../assets/images/Cuadro de tallas_Mesa de trabajo 1 copia 2.png" class="d-block w-100"
@@ -25,10 +25,10 @@
       </div>
     </section>
     <h1 class="productTitle">
-      Camiseta Faisan
+      {{product.tipo}} {{product.diseno}}
     </h1>
     <h2 class="productColor">
-      Palo de Rosa
+      {{product.color}}
     </h2>
     <h4 class="productDescription">
       Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi illum fugit molestiae corrupti soluta sed neque
@@ -37,53 +37,24 @@
     <h4 class="productsize">
       Talla
     </h4>
-    <section class="sizebtns">
-      <div class="sizebtn" id="size1">
-        <label class="checkBox">
-          XS
-          <input id="ch1" type="checkbox">
-          <div class="transition"></div>
-        </label>
-      </div>
-      <div class="sizebtn" id="size2">
-        <label class="checkBox">
-          S
-          <input id="ch1" type="checkbox">
-          <div class="transition"></div>
-        </label>
-      </div>
-      <div class="sizebtn" id="size3">
-        <label class="checkBox">
-          M
-          <input id="ch1" type="checkbox">
-          <div class="transition"></div>
-        </label>
-      </div>
-      <div class="sizebtn" id="size4">
-        <label class="checkBox">
-          L
-          <input id="ch1" type="checkbox">
-          <div class="transition"></div>
-        </label>
-      </div>
-      <div class="sizebtn" id="size5">
-        <label class="checkBox">
-          XL
-          <input id="ch1" type="checkbox">
-          <div class="transition"></div>
-        </label>
-      </div>
+    <section class="sizebtns" *ngFor="let tallas of product.tallas">
+      <button type="button" class="btnsizes" (click)="addSelectedSize(tallas.tallas, product._id)">
+        {{tallas.talla}}
+      </button>
     </section>
     <h4 class="productPrice">
-      50.000
+      {{product.precio}}
     </h4>
     <h4 class="addCart">
       Añadir al Carrito
     </h4>
-    <button class="addCartbtn">
-      <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-bag-plus" viewBox="0 0 16 16">
-        <path fill-rule="evenodd" d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5z"/>
-        <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"/>
+    <button class="addCartbtn" (click)="addtoCart(product)">
+      <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-bag-plus"
+        viewBox="0 0 16 16">
+        <path fill-rule="evenodd"
+          d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5z" />
+        <path
+          d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z" />
       </svg>
     </button>
   </section>

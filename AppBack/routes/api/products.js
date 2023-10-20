@@ -3,6 +3,32 @@ import productSchema from "../../models/productos.models.js"
 
 const router = express.Router();
 
+//Traer datos
+router.get("", (req, res) => {
+    productSchema
+      .find()
+      .then((data) => res.json(data))
+      .catch((error) => res.json({ message: error }));
+  });
+  router.post("", (req, res) => {
+    const { tipo,diseno,color,precio,talla,cantidad } = req.body;
+  
+    // Crea una instancia del modelo Goals con los datos proporcionados
+    const newProduct = new productSchema({
+      tipo,
+      diseno,
+      color,
+      precio,
+      talla,
+      cantidad,
+    });
+    // Guarda el nuevo registro en la base de datos
+    newProduct
+      .save()
+      .then((data) => res.json(data))
+      .catch((error) => res.json({ message: error }));
+  });
+
 //Traer todos los usuarios
 router.get("/products", (req, res) => {
     productSchema
@@ -11,12 +37,29 @@ router.get("/products", (req, res) => {
        .catch((err)=> res.json({ message: console.error(err + "Error")}));
 });
 
+
 //Listar un usuario
-router.get("/products/:id", (req, res) => {
+router.get("/products/:id", (require, response) => {
     const { id } = require.params;
     productSchema.findById(id)
     .then((data) => response.json(data))
     .catch((error) => response.json({ message: error}))
+});
+
+
+router.get('/products/:diseno', (request, response) => {
+  const { diseno } = request.params;
+
+  productSchema.findMany({ diseno })
+    .then((data) => {
+      if (data) {
+        const disenoValue = data.diseno; // Assuming "samurai" is the key you want to retrieve
+        response.json({ diseno: disenoValue });
+      } else {
+        response.status(404).json({ message: 'Product not found' });
+      }
+    })
+    .catch((error) => response.status(500).json({ message: error }));
 });
 
 //Crear mi usuario

@@ -1,22 +1,25 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { firstValueFrom } from 'rxjs';
+import { Observable } from 'rxjs';
+import { Order } from '../interface/order.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductsService {
 
-  httpCLient = inject(HttpClient);
-  baseUrl = "http://localhost:9000/api/products"
+  productUrl = 'http://localhost:9000/api/products';
+  createOrderUrl = 'http://localhost:9000/api/create-order';
 
-  getAll(){
-    return firstValueFrom(
-      this.httpCLient.get<any[]>(this.baseUrl),);
+  httpClient = inject(HttpClient);
+
+  traerTodo() {
+    return firstValueFrom(this.httpClient.get<any[]>(this.productUrl) as Observable<any[]>);
   }
- traerCosas(){
-  const httpOptions = {
-    headers : new HttpHeaders({"autorizado":localStorage.getItem("user_token")!})
+
+  async createOrder(order:Order){
+    const result = await this.httpClient.post<any[]>(this.createOrderUrl, order)as Observable<any[]>
+    return firstValueFrom(result);
   }
-}
 }

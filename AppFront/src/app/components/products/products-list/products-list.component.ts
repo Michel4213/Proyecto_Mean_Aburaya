@@ -9,12 +9,12 @@ import { inject } from '@angular/core';
 })
 export class ProductsListComponent {
 
-  arrProducts = signal<any[]>([])
+  // arrProducts = signal<any[]>([])
 
-  productService = inject(ProductsService);
+  // productService = inject(ProductsService);
 
-  async ngOnInit(){
-    const product = await this.productService.getAll();
-    this.arrProducts.set(product);
-  }
+  // async ngOnInit(){
+  //   const product = await this.productService.getAll();
+  //   this.arrProducts.set(product);
+  // }
 }

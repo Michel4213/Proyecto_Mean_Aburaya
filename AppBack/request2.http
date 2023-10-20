@@ -4,27 +4,40 @@ autorizado: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2OTQ1NzExOTZ9.ELNIyR
 
 
 ####
-
-POST http://localhost:9000/api/productsMany HTTP/1.1
+POST http://localhost:9000/api/products HTTP/1.1
 Content-Type: application/json
 
-[
+{
+    "tipo": "Camiseta",
+    "diseno": "Faisan",
+    "color": "Rosa",
+    "precio": 70.000,
+    "tallas": [
     {
-        "name":"Pepito",
-        "lastname": "Perez",
-        "age": 78
+        "talla":"XS",
+        "cantidad":"12"
     },
     {
-        "name":"Pepita",
-        "lastname": "Lozano",
-        "age": 78
+        "talla":"S",
+        "cantidad":"8"
     },
     {
-        "name":"Juan",
-        "lastname": "Aries",
-        "age": 78
+        "talla":"M",
+        "cantidad":"6"
+    },
+    {
+        "talla":"L",
+        "cantidad":"10"
+    },
+    {
+        "talla":"XL",
+        "cantidad":"5"
     }
-]
+    ],
+    "img1": "../../../../assets/images/Camiseta rosa frente.jpg",
+    "img2": "../../../../assets/images/Camiseta rosa espalda.jpg",
+    "routerlink": "/product"
+}
 
 ####
 
@@ -39,7 +52,7 @@ Content-Type: application/json
 }
 
 ####
-GET http://localhost:9000/api/products/"id" HTTP/1.1 
+GET http://localhost:9000/api/products/Samurai HTTP/1.1 
 
 ####
 PUT http://localhost:9000/api/products/"id" HTTP/1.1
